@@ -58,23 +58,13 @@ $(document).ready(function(){
   new Promise((resolve, reject) => {
     $(document).ajaxComplete( () => {
       console.log(jqxhr.responseJSON.response.venues);
-
       resolve();
+      let allVenues = jqxhr.responseJSON.response.venues;
+      for (let i in allVenues) {
+        $(".venue").append(`<h2>${allVenues[i].name}</h2>`);
+      }
+
     });
   }).catch(console.log("something went wrong, again!"));
 
 });
-
-// function responseOK() {
-//   console.log(jqxhr.responseJSON.response.venues);
-// }
-
-
-
-
-// Perform other work here ...
- 
-// Set another completion function for the request above
-/*jqxhr.always(function() {
-  alert( "second complete" );
-});*/
