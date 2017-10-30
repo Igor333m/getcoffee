@@ -38,7 +38,7 @@ $(document).ready(function(){
   
   $(".button").click( function() {
   jqxhr = $.ajax({
-    url: `https://api.foursquare.com/v2/venues/search?ll=${latitude},${longitude}&radius=1000&limit=5&query=coffee&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&v=20172910`,
+    url: `https://api.foursquare.com/v2/venues/search?ll=${latitude},${longitude}&radius=10000&limit=5&query=coffee&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&v=20172910`,
     method: 'GET',
     // client_id: CLIENT_ID,
     // client_secret: CLIENT_SECRET,
