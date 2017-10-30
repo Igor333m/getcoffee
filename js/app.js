@@ -61,7 +61,9 @@ $(document).ready(function(){
       resolve();
       let allVenues = jqxhr.responseJSON.response.venues;
       for (let i in allVenues) {
-        $(".venue").append(`<h2>${allVenues[i].name}</h2>`);
+        $(".venue").append(`<li><h2>${allVenues[i].name}</h2>\
+          <p>Phone: ${allVenues[i].contact.formattedPhone}</p>\
+          <p>Address: ${allVenues[i].location.formattedAddress[0]}, ${allVenues[i].location.formattedAddress[1]}</p></li>`);
       }
 
     });
